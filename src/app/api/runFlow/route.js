@@ -55,6 +55,6 @@ export async function POST(req) {
     return NextResponse.json(response);
   } catch (error) {
     console.error("Error running flow:", error.message);
-    return NextResponse.json({ error: "Error initiating session", details: error.message }, { status: 500 });
-  }
+    return NextResponse.json({ error: "Error initiating session", details: error.message }, { status: 500 });
+  }
 }
