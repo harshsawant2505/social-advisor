@@ -7,7 +7,8 @@ import { NextResponse } from "next/server";
 
 export async function POST(req:any, res:any){
   console.log("here")
-const { q } = await req.body;
+const { q } = await req.json();
+console.log("q: ",q)
   try {
  
   const apiKey = process.env.API_KEY; // Replace with your SerpAPI key
