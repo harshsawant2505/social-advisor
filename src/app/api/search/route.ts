@@ -5,12 +5,11 @@ import { NextResponse } from "next/server";
 
 
 
-export async function GET(req:any, res:any){
-    console.log("here")
-
-    try {
-const q = "hair oil ad by brands blogs"; // Replace with your search term
-      
+export async function POST(req:any, res:any){
+  console.log("here")
+const { q } = await req.body;
+  try {
+ 
   const apiKey = process.env.API_KEY; // Replace with your SerpAPI key
   const url = `https://serpapi.com/search.json?q=${encodeURIComponent(q as string)}&hl=en&gl=us&api_key=${apiKey}`;
 

@@ -10,7 +10,8 @@ const [data, setData] = useState<any>(null);
 
 
 
-const [input, setInput] = useState<string>("hair oil ad by brands blogs");
+// const [input, setInput] = useState<string>("hair oil ad by brands blogs");
+ const [input, setInput] = useState<string>("trending memes on hair");
 
 
 const [response, setResponse] = useState<any>(null);
