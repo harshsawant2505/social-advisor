@@ -1,0 +1,30 @@
+// pages/api/search.ts
+
+import axios from "axios";
+import { NextResponse } from "next/server";
+
+
+
+export async function GET(req:any, res:any){
+    console.log("here")
+
+    try {
+const q = "hair oil ad by brands blogs"; // Replace with your search term
+      
+  const apiKey = process.env.API_KEY; // Replace with your SerpAPI key
+  const url = `https://serpapi.com/search.json?q=${encodeURIComponent(q as string)}&hl=en&gl=us&api_key=${apiKey}`;
+
+  try {
+    const response = await axios.get(url); // Fetch data from SerpAPI
+   return NextResponse.json(response.data)// Return the data to the client
+  } catch (error:any) {
+    console.error("Error fetching data:", error);
+    return NextResponse.json({error: error.message}, {status: 500}); // Return an error to the client
+  }
+        
+    } catch (error:any) {
+        console.log(error)  
+        return NextResponse.json({error: error.message}, {status: 500});    
+    }
+    
+}
