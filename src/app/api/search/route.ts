@@ -1,4 +1,3 @@
-// pages/api/search.ts
 
 import axios from "axios";
 import { NextResponse } from "next/server";
@@ -24,7 +23,7 @@ console.log("q: ",q)
         
     } catch (error:any) {
         console.log(error)  
-        return NextResponse.json({error: error.message}, {status: 500});    
-    }
-    
+        return NextResponse.json({error: error.message}, {status: 500});    
+    }
+    
 }
