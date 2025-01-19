@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 'use client'
 import React from 'react';
-import { Search, Brain, BarChart3,  ChevronRight, Globe, Activity, LineChart } from 'lucide-react';
+import { Search, Brain, BarChart3, Globe, Activity, LineChart } from 'lucide-react';
 
 import { useRouter } from 'next/navigation';
+import Header from '@/components/Header';
 const LandingPage = () => {
   const router = useRouter();
 
@@ -12,23 +15,25 @@ const LandingPage = () => {
   
 
   return (
+    <div>
+      <Header/>
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden ">
         <div className="absolute inset-0 bg-purple-600/10 backdrop-blur-3xl">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 animate-pulse"></div>
         </div>
         
-        <div className="container mx-auto px-4 pt-32 pb-40 relative">
-          <div className="text-center">
+        <div className="container mx-auto px-4 pt-32 pb-40 relative ">
+          <div className="text-center min-h-[50vh]">
             <div className="inline-block animate-float">
               
             </div>
             <h1 className="text-7xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent mb-6">
-              ART Finder
+              ART aumatic
             </h1>
-            <p className="text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Harness the power of AI to decode user behavior and craft perfect ad campaigns
+            <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+              Harness the power of AI to decode user behavior and craft perfect ad campaigns with real-time analytics, engagement tracking, and visual reports. Transform your marketing strategy with data-driven insights.
             </p>
             <button 
               onClick={() =>handleStart()}
@@ -99,11 +104,7 @@ const LandingPage = () => {
                 <feature.icon className="w-12 h-12 text-purple-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                 <p className="text-gray-400 mb-4">{feature.description}</p>
-                <img 
-                  src={feature.image} 
-                  alt={feature.title}
-                  className="rounded-lg shadow-lg transform group-hover:scale-105 transition-all duration-500"
-                />
+                
               </div>
             ))}
           </div>
@@ -111,31 +112,7 @@ const LandingPage = () => {
       </div>
 
       {/* 3D Stats Section */}
-      <div className="py-24 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                Powerful Analytics at Your Fingertips
-              </h2>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { label: "Data Sources", value: "50+" },
-                  { label: "Analysis Speed", value: "Real-time" },
-                  { label: "Accuracy Rate", value: "99.9%" },
-                  { label: "Daily Insights", value: "1M+" }
-                ].map((stat, index) => (
-                  <div key={index} className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all">
-                    <div className="text-3xl font-bold text-purple-400 mb-2">{stat.value}</div>
-                    <div className="text-gray-400">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
+      
 
       {/* CTA Section */}
       <div className="relative py-24 overflow-hidden">
@@ -146,6 +123,8 @@ const LandingPage = () => {
        
       </div>
     </div>
+    </div>
+
   );
 };
 

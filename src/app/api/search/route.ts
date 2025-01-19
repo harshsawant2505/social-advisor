@@ -1,10 +1,10 @@
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 import { NextResponse } from "next/server";
 
 
 
-export async function POST(req:any, res:any){
+export async function POST(req:any){
   console.log("here")
 const { q } = await req.json();
 console.log("q: ",q)
